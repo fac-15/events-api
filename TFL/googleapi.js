@@ -1,11 +1,17 @@
 // const app_id = "df5c45a2";
 // const app_key = "e753bebcf92ac22a1f8d97c0df442e68";
 
-(function() {
+function showRoute(event) {
+  // clear the current route
+  document.getElementById("legs").textContent = "";
+  var postCode = event.target.className;
+  console.log(postCode);
   var xhr = new XMLHttpRequest();
   var url =
-    "https://api.tfl.gov.uk/journey/journeyresults/n166uz/to/nw87db?app_id=df5c45a2&app_key=e753bebcf92ac22a1f8d97c0df442e68";
-
+    "https://api.tfl.gov.uk/journey/journeyresults/n166uz/to/" +
+    postCode +
+    "?app_id=df5c45a2&app_key=e753bebcf92ac22a1f8d97c0df442e68";
+  console.log(url);
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       var googleDirection = JSON.parse(xhr.responseText);
@@ -58,4 +64,8 @@
 
   xhr.open("GET", url, true);
   xhr.send();
-})();
+}
+
+document.getElementById("events").addEventListener("click", showRoute, false);
+//
+// logic.firstAPICall();
