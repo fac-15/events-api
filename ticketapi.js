@@ -83,7 +83,7 @@ function firstAPICall() {
         var itemSpan = document.createElement("span");
         itemSpan.textContent = titles[j].title;
         newItem.appendChild(itemSpan);
-        var ul = document.querySelector("ul");
+        var ul = document.getElementById("events");
         ul.appendChild(newItem);
       }
       // eventName.textContent = parsed._embedded.events[0].name;
