@@ -1,7 +1,7 @@
 # events-api 🎉
 ![](https://media1.tenor.com/images/74af153c37829c49fa897a5160713549/tenor.gif?itemid=4096707)
 
-[events-api](https://fac-15.github.io/events-api/)
+Link to your [events-api](https://fac-15.github.io/events-api/)
 
 ### Dependencies to install 💻
 
