@@ -2,12 +2,20 @@
   <head>
     <meta charset="utf-8">
     <title>Event Api</title>
+    <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
   </head>
+
   <body>
+
     <section id="main">
-    <button type="button" name="button">Show me today's events!</button>
+
+    <h1 id="header"> Bounce</h1>
+
+    <section id="banner">
+    <button type="button" name="button"><img src="KcnoAB6Ki.png" alt="Smiley face" height="400px" width="100%"></button>
+    </section>
     <!-- <div class="eventDisplay">
       <h1>Name of Event</h1>
       <h2>Date</h2>
@@ -15,6 +23,7 @@
       <h4>Location</h4>
     </div> -->
     <div class="">
+
       <ul id="events" style="list-style-type: none;">
 
       </ul>
@@ -22,16 +31,27 @@
 
     <section id ='tfl'>
       <h1>Fastest by public transport</h1>
-      <p>&nbsp;<span id="duration"></span></p>
-      <h3>Set off and arrival time</h3>
-      <p>&nbsp;<span id="start" id="arrival"></span></p>
+
+    <div id="time">
+      <!-- <h3>Set off and arrival time</h3> -->
+      <p>Total <span id="duration"></span></p>
+
+      <p>Start, Finish <span  id="start" id="arrival"><p>
+        <p>&nbsp;<span id="direction"></span></p>
+        <ul id ='legs'></ul>
+        </div>
+  </div>
 
 
-      <p>Directions:&nbsp;<span id="direction"></span></p>
-      <ul id ='legs'></ul>
+
   </section>
+
   </section>
+
+    <span id="invisible" style="display:none"></span>
+
     <script src="./Ticketmaster/ticketapi.js"></script>
     <script src="./TFL/googleapi.js"></script>
+
   </body>
 </html>
