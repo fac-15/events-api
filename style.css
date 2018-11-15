@@ -1,7 +1,89 @@
+body {
+  /* font-family: 'Charmonman', cursive; */
+  font-family: "Asap", sans-serif;
+  font-size: 16px / 1em;
+  line-height: 1.5;
+  text-align: center;
+  color: rgb(104, 44, 164);
+  padding: 3em;
+}
+
+#header{
+  padding: 50 0;
+  font-size: 4em;
+}
+
+#click{
+  padding: 20 0;
+  font-size: 1.5em;
+  color: black;
+}
+button{
+  font-size: 2em;
+  width: 70%;
+  height: 10%;
+ margin-bottom: 1em;
+ border-radius: 0.25rem;
+cursor: pointer;
+transition: background-color ease-in-out 0.3s;
+border-radius: 0.75rem;
+}
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+
+}
+/*
 li {
+  padding: 0.25rem;
+  border: 1px solid black;
   cursor: pointer;
+  text-align: left;
+  border-radius: 0.75rem;
+
 }
 
 li:hover {
   color: blue;
+} */
+
+li {
+
+color: black;
+border:none;
+position:relative;
+height: 1.5em;
+font-size:1.6em;
+padding:  1em;
+cursor:pointer;
+transition:800ms ease all;
+outline:none;
+}
+li:hover{
+background:#fff;
+color:#1AAB8A;
+}
+li:before,li:after{
+content:'';
+position:absolute;
+top:0;
+right:0;
+height:2px;
+width:0;
+background: #1AAB8A;
+transition:400ms ease all;
+}
+li:after{
+right:inherit;
+top:inherit;
+left:0;
+bottom:0;
+}
+li:hover:before,li:hover:after{
+width:100%;
+transition:800ms ease all;
+}
+li span{
+  font-size: 1.2rem;
+  font-weight: 600;
 }
