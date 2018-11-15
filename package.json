@@ -1,0 +1,23 @@
+{
+  "name": "events-api",
+  "version": "1.0.0",
+  "description": "[events-api](https://fac-15.github.io/events-api/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape tickettest.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac-15/events-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-15/events-api/issues"
+  },
+  "homepage": "https://github.com/fac-15/events-api#readme",
+  "dependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  }
+}
