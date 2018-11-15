@@ -24,6 +24,14 @@
     document.getElementById("direction").innerHTML = newArray;
     // googleDirection.journeys[0].legs[0].instruction.summary;
     // console.log("test", googleDirection.journeys[0].legs[0]);
+    var counter = 0;
+    var ul = document.getElementById("legs");
+    while (newArray.length > counter) {
+      var li = document.createElement("li");
+      li.textContent = newArray[counter];
+      ul.appendChild(li);
+      counter++;
+    }
   };
   xhr.open("GET", url, true);
   xhr.send(); //included this
