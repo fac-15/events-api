@@ -1,5 +1,16 @@
-// const app_id = "df5c45a2";
-// const app_key = "e753bebcf92ac22a1f8d97c0df442e68";
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    console.log("not working");
+  }
+}
+function showPosition(position) {
+  document.getElementById("invisible").textContent =
+    position.coords.latitude + "," + position.coords.longitude;
+  console.log(document.getElementById("invisible").textContent);
+}
+getLocation();
 
 function showRoute(event) {
   // clear the current route
@@ -7,8 +18,11 @@ function showRoute(event) {
   var postCode = event.target.className;
   console.log(postCode);
   var xhr = new XMLHttpRequest();
+  var latLong = document.getElementById("invisible").textContent;
   var url =
-    "https://api.tfl.gov.uk/journey/journeyresults/n166uz/to/" +
+    "https://api.tfl.gov.uk/journey/journeyresults/" +
+    latLong +
+    "/to/" +
     postCode +
     "?app_id=df5c45a2&app_key=e753bebcf92ac22a1f8d97c0df442e68";
   console.log(url);
@@ -19,15 +33,14 @@ function showRoute(event) {
 
       document.getElementById("duration").innerHTML =
         googleDirection.journeys[0].duration + " mins";
-
       // direction list
-
       var newArray = [];
 
       for (let i = 0; i < array.length; i++) {
         newArray.push(array[i].instruction.summary);
       }
     }
+    //create <li> with directions
     var counter = 0;
     var ul = document.getElementById("legs");
     while (newArray.length > counter) {
@@ -67,5 +80,3 @@ function showRoute(event) {
 }
 
 document.getElementById("events").addEventListener("click", showRoute, false);
-//
-// logic.firstAPICall();
