@@ -13,11 +13,11 @@
 
       document.getElementById("duration").innerHTML =
         googleDirection.journeys[0].duration + " mins";
-      // document.getElementById("direction").innerHTML = newArray;
 
       // direction list
 
       var newArray = [];
+
       for (let i = 0; i < array.length; i++) {
         newArray.push(array[i].instruction.summary);
       }
@@ -27,6 +27,19 @@
     while (newArray.length > counter) {
       var li = document.createElement("li");
       li.textContent = newArray[counter];
+      if (newArray[counter].includes("Walk")) {
+        var dateSpan = document.createElement("span");
+        dateSpan.innerHTML = '<i class="fas fa-walking"></i>';
+        li.insertBefore(dateSpan, li.firstChild);
+      } else if (newArray[counter].includes("bus")) {
+        var dateSpan = document.createElement("span");
+        dateSpan.innerHTML = '<i class="fas fa-bus"></i>';
+        li.insertBefore(dateSpan, li.firstChild);
+      } else {
+        var dateSpan = document.createElement("span");
+        dateSpan.innerHTML = '<i class="fas fa-train"></i>';
+        li.insertBefore(dateSpan, li.firstChild);
+      }
       ul.appendChild(li);
       counter++;
     }
@@ -44,7 +57,5 @@
   };
 
   xhr.open("GET", url, true);
-  xhr.send(); //included this
+  xhr.send();
 })();
-
-// instruction.summary;
