@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
   </head>
   <body>
+    <section id="main">
     <button type="button" name="button">Show me today's events!</button>
     <!-- <div class="eventDisplay">
       <h1>Name of Event</h1>
@@ -21,13 +22,14 @@
 
     <section id ='tfl'>
       <h1>Fastest by public transport</h1>
-      <p>Duration:&nbsp;<span id="duration"></span></p>
+      <p>&nbsp;<span id="duration"></span></p>
       <h3>Set off and arrival time</h3>
       <p>&nbsp;<span id="start" id="arrival"></span></p>
 
 
       <p>Directions:&nbsp;<span id="direction"></span></p>
       <ul id ='legs'></ul>
+  </section>
   </section>
     <script src="./Ticketmaster/ticketapi.js"></script>
     <script src="./TFL/googleapi.js"></script>
