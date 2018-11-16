@@ -42,7 +42,18 @@ function showRoute(event) {
         newArray.push(array[i].instruction.summary);
       }
     }
+    //startfinsh time
+    var start = googleDirection.journeys[0].startDateTime
+      .split("T")[1]
+      .slice(0, 5);
+    var arrival = googleDirection.journeys[0].arrivalDateTime
+      .split("T")[1]
+      .slice(0, 5);
+    // console.log(start);
+    // console.log(arrival);
+    document.querySelector(".startFin").innerHTML = start + "," + arrival;
 
+    //directions
     var counter = 0;
     var ul = document.getElementById("legs");
     while (newArray.length > counter) {
@@ -64,16 +75,6 @@ function showRoute(event) {
       ul.appendChild(li);
       counter++;
     }
-    // setoff and arrival time
-    var start = googleDirection.journeys[0].startDateTime
-      .split("T")[1]
-      .slice(0, 5);
-    var arrival = googleDirection.journeys[0].arrivalDateTime
-      .split("T")[1]
-      .slice(0, 5);
-    // console.log(start);
-    // console.log(arrival);
-    document.getElementById("start").innerHTML = start + " " + arrival;
   };
   xhr.open("GET", url, true);
   xhr.send();

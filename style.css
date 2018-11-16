@@ -23,11 +23,11 @@ body {
 }
 
 #header {
-  padding: 3rem 0;
+  padding: 2rem 0;
   text-align: center;
   background-color: #cca353;
   font-family: Poppins, sans-serif;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   color: #fff;
 }
 
@@ -38,20 +38,23 @@ body {
 }
 
 #banner {
-  padding-top: 40px;
+  padding-top: 20px;
   /* height: 400px;
   background-image: url("KcnoAB6Ki.png");
   width: 100%;
   background-repeat: no-repeat, repeat; */
 }
+
+#catch {
+  font-size: 1.2rem;
+}
+
 button {
   font-size: 2em;
-
   margin-bottom: 1em;
-  border-radius: 0.25rem;
   cursor: pointer;
-
   border-radius: 0.75rem;
+  padding: 0;
 }
 
 #events li {
@@ -69,7 +72,7 @@ button {
 #events li:hover {
   /* background: #fff; */
   color: #cca353;
-  background: rgb(152,251,152,0.5);
+  background: rgb(152, 251, 152, 0.5);
 }
 #events li:before,
 #events li:after {
@@ -107,14 +110,13 @@ button {
 
 #tfl {
   text-align: left;
-  font-size: 1.5rem;
 }
 #tfl h1 {
   padding: 0.66rem 0;
   text-align: center;
   background-color: #e0703f;
-  font-family: Poppins, sans-serif;
-  font-size: 1.8rem;
+  font-family: arial;
+  font-size: 1.5rem;
   color: #fff;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -125,6 +127,7 @@ button {
 }
 #legs li span {
   padding-right: 10px;
+  padding-top: 10px;
 }
 
 #legs li {
@@ -134,17 +137,32 @@ button {
 
 #time {
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  padding: 0.66rem 0;
-  font-size: 1.8rem;
+  justify-content: space-between;
+  flex-direction: row;
   color: #fff;
+  font-family: arial;
   padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: #e80c7f;
+  font-size: 1.3rem;
+}
+#time p {
+  padding-right: 10px;
 }
 #duration,
-#start,
-#arrival {
-  color: white;
+#startFin {
+  color: black;
+}
+
+@media (max-width: 800px) {
+  #time {
+    display: flex;
+    font-size: 1.4rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 650px) {
+  ul#legs {
+    padding-top: 30px;
+  }
 }
