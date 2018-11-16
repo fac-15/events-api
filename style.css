@@ -64,10 +64,12 @@ button {
   padding: 0.5rem;
   cursor: pointer;
   transition: 800ms ease all;
+  border-radius: 1.75;
 }
 #events li:hover {
-  background: #fff;
+  /* background: #fff; */
   color: #cca353;
+  background: rgb(152,251,152,0.5);
 }
 #events li:before,
 #events li:after {

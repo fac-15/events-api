@@ -1,18 +1,6 @@
-var myCity = "London";
-var date = new Date()
-  .toJSON()
-  .slice(0, 10)
-  .replace(/-/g, "-");
+var date = new Date().toJSON().slice(0, 10).replace(/-/g, "-");
 var time = new Date().toJSON().slice(10, 19);
-var url =
-  "https://app.ticketmaster.com/discovery/v2/events.json?apikey=oAocDLZcbnlG4NabWmo2qx1gyzlzdVGL" +
-  "&city=" +
-  myCity +
-  "&sort=date,asc&startDateTime=" +
-  date +
-  time +
-  "Z";
-
+var url ="https://app.ticketmaster.com/discovery/v2/events.json?apikey=oAocDLZcbnlG4NabWmo2qx1gyzlzdVGL&city=London&sort=date,asc&startDateTime=" + date + time + "Z";
 var eventButton = document.querySelector("button");
 
 function firstAPICall() {
@@ -25,6 +13,7 @@ function firstAPICall() {
       var parsed = JSON.parse(xhr.responseText);
       var events = parsed._embedded.events;
       var titles = [];
+      // get the info and put them in objects
       for (var i = 0; i < events.length; i++) {
         titles.push({
           title: events[i].name,
@@ -33,7 +22,8 @@ function firstAPICall() {
           venueName: events[i]._embedded.venues[0].name
         });
       }
-      // console.log(titles);
+
+      // add postcode to the events
       for (var j = 0; j < titles.length; j++) {
         var newItem = document.createElement("li");
         newItem.className = events[j]._embedded.venues[0].postalCode;
@@ -41,6 +31,7 @@ function firstAPICall() {
         itemSpan.className = events[j]._embedded.venues[0].postalCode;
         itemSpan.textContent = titles[j].title;
         newItem.appendChild(itemSpan);
+
         var ul = document.getElementById("events");
         var scrol = document.createElement("a");
         scrol.setAttribute("href", "#legs");
