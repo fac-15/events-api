@@ -21,6 +21,7 @@ function showRoute(event) {
   var postCode = event.target.className;
   // console.log(postCode);
   var xhr = new XMLHttpRequest();
+  var latLong = document.getElementById("invisible").textContent;
   var url =
     "https://api.tfl.gov.uk/journey/journeyresults/" +
     invisible +
