@@ -27,7 +27,7 @@ body {
   text-align: center;
   background-color: #cca353;
   font-family: Poppins, sans-serif;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   color: #fff;
 }
 
@@ -44,6 +44,11 @@ body {
   width: 100%;
   background-repeat: no-repeat, repeat; */
 }
+
+#catch {
+  font-size: 1.2rem;
+}
+
 button {
   font-size: 2em;
   margin-bottom: 1em;
@@ -62,10 +67,12 @@ button {
   padding: 0.5rem;
   cursor: pointer;
   transition: 800ms ease all;
+  border-radius: 1.75;
 }
 #events li:hover {
-  background: #fff;
+  /* background: #fff; */
   color: #cca353;
+  background: rgb(152, 251, 152, 0.5);
 }
 #events li:before,
 #events li:after {
@@ -103,18 +110,13 @@ button {
 
 #tfl {
   text-align: left;
-  font-size: 1.5rem;
-
-  font-family: arial;
-  font-size: 15px;
-  padding: 20px;
 }
 #tfl h1 {
   padding: 0.66rem 0;
   text-align: center;
   background-color: #e0703f;
-  font-family: Poppins, sans-serif;
-  font-size: 1.8rem;
+  font-family: arial;
+  font-size: 1.5rem;
   color: #fff;
   padding-top: 30px;
   padding-bottom: 30px;
