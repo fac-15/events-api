@@ -1,7 +1,7 @@
-# events-api 🎉
+# Bounce 🎉
 ![](https://media1.tenor.com/images/74af153c37829c49fa897a5160713549/tenor.gif?itemid=4096707)
 
-Link to your [events-api](https://fac-15.github.io/events-api/)
+[Link to our project](https://fac-15.github.io/events-api/)
 
 ### Goals 🥅
 
@@ -14,14 +14,16 @@ To get more comfortable with APIs.
 
 ### User Journey 
 
-(Sak diagram)
+<img src = "https://user-images.githubusercontent.com/41472850/48621839-bd9aaa00-e99c-11e8-82b1-a0d22475823c.png" width="400px">
 
 
 ### Why we chose these APIs
 
 We wanted to create something that would be useful, and might have some real-world application. 
 
-We chose the Ticketmaster API as we wanted to return a list of events. The documentation was pretty nice. The JSON was easy to navigate. 
+We chose the Ticketmaster API as we wanted to return a list of events. The documentation was pretty nice. The JSON was easy to navigate. https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
+
+When we ran an error, the API quite often returned a helpful message in the .responseText, that gave us instructions on how to fix what we'd done. Very helpful and worth checking the console for!!!
 
 We chose the TFL API as we ran into problems with CORS on the Google Maps API. There were ways to get around it using a browser extension, but this wouldn't be practical for other users. 
 
@@ -37,14 +39,19 @@ TFL's docs were not as good - it required a lot of finding examples, and some in
 
 
 ### Problems 😥 
-- Getting google map api to work
 
-- trouble with lat and long
+- Google Maps API...
 
-- We spent ages trying to link our two .js files using **module.exports** and **require**. We forgot that we had already written code to help us avoid having to do this, passing the unique post code from our first API to each li element as a class name: 
+- We spent ages trying to link our two .js files using **module.exports** and **require**, and ended up getting nowhere. We'd forgotten that we had already written code to help us avoid having to do this, passing a unique post code from our first API to each newly-created li element as a class name: 
 
 ```
-<span class="WC2 9HU">Matilda the Musical</span>
+        var newItem = document.createElement("li");
+        newItem.className = events[j]._embedded.venues[0].postalCode;
+```
+Which created this on the DOM:
+
+```
+        <span class="WC2 9HU">Matilda the Musical</span>
 
 ```
 **Using the DOM**, our TFL API could then access the post code, and return directions relevant to the selected event.
@@ -57,10 +64,12 @@ function showPosition(position) {
     position.coords.latitude + "," + position.coords.longitude;
 }
 ```
-And then our API call was able to access the latitude and longitude from the element ``` ("invisible") ``` on the DOM.
+And then our second API call to TFL was able to access the latitude and longitude from the element ``` ("invisible") ``` on the DOM.
+
+**Tests** 
 
 ### Stretch Goals 🏃🥅
-- Add image of the venue/event.
+- Display an image (provided in the JSON) for each listed event.
 - Allow user to choose a date, and return a list of events for that date.
 - Display the venue address to the user, as well as the directions on how to get there. 
 
