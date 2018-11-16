@@ -72,7 +72,7 @@ function showRoute(event) {
       .slice(0, 5);
     // console.log(start);
     // console.log(arrival);
-    document.getElementById("start").innerHTML = start + " " + arrival;
+    document.querySelector(".startFin").innerHTML = start + "," + arrival;
   };
   xhr.open("GET", url, true);
   xhr.send();
