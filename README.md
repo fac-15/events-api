@@ -41,11 +41,23 @@ TFL's docs were not as good - it required a lot of finding examples, and some in
 
 - trouble with lat and long
 
-- We spent ages trying to link our two .js files using module.exports and require. We forgot that we had already written code to help us avoid having to do this, passing information to each li element as a class name: 
+- We spent ages trying to link our two .js files using **module.exports** and **require**. We forgot that we had already written code to help us avoid having to do this, passing the unique post code from our first API to each li element as a class name: 
 
 ```
+<span class="WC2 9HU">Matilda the Musical</span>
 
 ```
+**Using the DOM**, our TFL API could then access the post code, and return directions relevant to the selected event.
+
+- We used the same DOM logic to overcome a problem with our geolocation. We couldn't get the user's latitude and longitude out of the local scope of the getLocation() function, and we couldn't pass the return value of the function into our TFL API call. So we sent the user's co-ordinates to the DOM: 
+
+```
+function showPosition(position) {
+  document.getElementById("invisible").textContent =
+    position.coords.latitude + "," + position.coords.longitude;
+}
+```
+And then our API call was able to access the latitude and longitude from the element ``` ("invisible") ``` on the DOM.
 
 ### Stretch Goals 🏃🥅
 - Add image of the venue/event.
