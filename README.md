@@ -30,6 +30,7 @@ We chose the TFL API as we ran into problems with CORS on the Google Maps API. T
 TFL's docs were not as good - it required a lot of finding examples, and some instructions weren't clear, for example how to append keys and IDs as query parameters in the url.
 
 ### Dependencies to install 💻
+![](https://media.giphy.com/media/1ZDHv3943FIkvAKzMN/giphy.gif)
 
 - JavaScript
 - HTML
@@ -39,6 +40,7 @@ TFL's docs were not as good - it required a lot of finding examples, and some in
 
 
 ### Problems 😥 
+![travolta](https://media.giphy.com/media/jWexOOlYe241y/giphy.gif)
 
 - Google Maps API...
 
@@ -48,13 +50,13 @@ TFL's docs were not as good - it required a lot of finding examples, and some in
         var newItem = document.createElement("li");
         newItem.className = events[j]._embedded.venues[0].postalCode;
 ```
-Which created this on the DOM:
+- Which created this on the DOM:
 
 ```
         <span class="WC2 9HU">Matilda the Musical</span>
 
 ```
-**Using the DOM**, our TFL API could then access the post code, and return directions relevant to the selected event.
+- **Using the DOM**, our TFL API could then access the post code, and return directions relevant to the selected event.
 
 - We used the same DOM logic to overcome a problem with our geolocation. We couldn't get the user's latitude and longitude out of the local scope of the getLocation() function, and we couldn't pass the return value of the function into our TFL API call. So we sent the user's co-ordinates to the DOM: 
 
@@ -64,9 +66,11 @@ function showPosition(position) {
     position.coords.latitude + "," + position.coords.longitude;
 }
 ```
-And then our second API call to TFL was able to access the latitude and longitude from the element ``` ("invisible") ``` on the DOM.
+- And then our second API call to TFL was able to access the latitude and longitude from the element ``` ("invisible") ``` on the DOM.
 
-**Tests** 
+### **Tests** 
+
+- We had problems testing APIs, we managed to test some of our other functions a little!
 
 ### Stretch Goals 🏃🥅
 ![dancing](https://media.giphy.com/media/jn4N059jwA2UE/giphy.gif)
