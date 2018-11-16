@@ -26,6 +26,7 @@ function firstAPICall() {
       // add postcode to the events
       for (var j = 0; j < titles.length; j++) {
         var newItem = document.createElement("li");
+        newItem.className = events[j]._embedded.venues[0].postalCode;
         var itemSpan = document.createElement("span");
         itemSpan.className = events[j]._embedded.venues[0].postalCode;
         itemSpan.textContent = titles[j].title;
