@@ -69,6 +69,8 @@ And then our second API call to TFL was able to access the latitude and longitud
 **Tests** 
 
 ### Stretch Goals 🏃🥅
+![dancing](https://media.giphy.com/media/jn4N059jwA2UE/giphy.gif)
+
 - Display an image (provided in the JSON) for each listed event.
 - Allow user to choose a date, and return a list of events for that date.
 - Display the venue address to the user, as well as the directions on how to get there. 
