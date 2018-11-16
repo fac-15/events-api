@@ -1,5 +1,4 @@
 var myCity = "London";
-
 var date = new Date()
   .toJSON()
   .slice(0, 10)
@@ -19,10 +18,10 @@ var eventButton = document.querySelector("button");
 function firstAPICall() {
   document.getElementById("events").textContent = "";
   var xhr = new XMLHttpRequest();
-  console.log(xhr);
+  // console.log(xhr);
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      console.log("working");
+      // console.log("working");
       var parsed = JSON.parse(xhr.responseText);
       var events = parsed._embedded.events;
       var titles = [];
@@ -34,7 +33,7 @@ function firstAPICall() {
           venueName: events[i]._embedded.venues[0].name
         });
       }
-      console.log(titles);
+      // console.log(titles);
       for (var j = 0; j < titles.length; j++) {
         var newItem = document.createElement("li");
         var itemSpan = document.createElement("span");
@@ -42,7 +41,10 @@ function firstAPICall() {
         itemSpan.textContent = titles[j].title;
         newItem.appendChild(itemSpan);
         var ul = document.getElementById("events");
-        ul.appendChild(newItem);
+        var scrol = document.createElement("a");
+        scrol.setAttribute("href", "#legs");
+        scrol.appendChild(newItem);
+        ul.appendChild(scrol);
       }
     } else {
       console.log("loading");
@@ -51,5 +53,4 @@ function firstAPICall() {
   xhr.open("GET", url, true);
   xhr.send();
 }
-
 eventButton.addEventListener("click", firstAPICall, false);
