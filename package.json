@@ -4,7 +4,7 @@
   "description": "[events-api](https://fac-15.github.io/events-api/)",
   "main": "index.js",
   "scripts": {
-    "test": "tape tickettest.js | tap-spec"
+    "test": "tape Ticketmaster/tickettest.js | tap-spec"
   },
   "repository": {
     "type": "git",

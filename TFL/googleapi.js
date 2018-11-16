@@ -32,6 +32,7 @@ function showRoute(event) {
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       var googleDirection = JSON.parse(xhr.responseText);
+      document.getElementById("journeyHeader").textContent = "Fastest route";
       var array = googleDirection.journeys[0].legs;
       document.getElementById("duration").innerHTML =
         googleDirection.journeys[0].duration + " mins";
